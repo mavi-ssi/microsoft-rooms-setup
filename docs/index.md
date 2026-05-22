@@ -20,7 +20,7 @@ This guide details the complete process for provisioning and configuring **5 phy
 Your IT admin will handle the initial raw provisioning using a web browser inside the **Exchange Admin Center**.
 
 1. Log in to the [Exchange Admin Center](https://admin.exchange.microsoft.com).
-2. On the left navigation sidebar, choose **Recipients** $\rightarrow$ **Resources**.
+2. On the left navigation sidebar, choose **Recipients** → **Resources**.
 3. Click the **`+ Add a room resource`** button at the top of the interface.
 4. **Basic Setup Configuration:**
     * **Name:** Input a recognizable, clean string (e.g., `Conference Room 1`).
@@ -40,7 +40,7 @@ Your IT admin will handle the initial raw provisioning using a web browser insid
 
 To prevent users from hoarding physical office space or camping out in rooms for entire days, configure hard operational boundaries visually for each room.
 
-1. While still on the **Recipients** $\rightarrow$ **Resources** screen, click on your newly created room (e.g., `Conference Room 1`). A properties contextual panel will slide out from the right side of the page.
+1. While still on the **Recipients** → **Resources** screen, click on your newly created room (e.g., `Conference Room 1`). A properties contextual panel will slide out from the right side of the page.
 2. Click on the **Settings** tab at the top of that sliding panel.
 3. Locate the **Booking choices** section and adjust the following settings as needed:
     * **Booking window (days):** Specifies maximum allowable days for advanced booking.
