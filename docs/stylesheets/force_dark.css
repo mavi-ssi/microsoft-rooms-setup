@@ -1,0 +1,78 @@
+@media print {
+    /* 1. Global Accent Overrides */
+    :root {
+        --md-primary-fg-color: #ff9100 !important; 
+        --md-accent-fg-color: #ffab40 !important;
+    }
+
+    /* 2. Fix the Red/Orange Title Underlines */
+    .md-typeset h1, 
+    .md-typeset h2 {
+        color: #ffffff !important;
+        border-bottom: .05rem solid #ff9100 !important; /* Force the line color */
+    }
+
+    /* 3. Fix Horizontal Rules (<hr>) */
+    .md-typeset hr {
+        border-bottom: .05rem solid #ff9100 !important;
+    }
+
+    /* 4. Fix Bold/Strong Text Visibility */
+    .md-typeset strong, 
+    .md-typeset b {
+        color: #ff9100 !important;
+        font-weight: 700;
+    }
+
+    /* 5. Fix Inline Code Highlights (the red-ish text in your screenshots) */
+    .md-typeset code {
+        color: #ffab40 !important; /* Bright orange for inline code */
+        background-color: rgba(255, 145, 0, 0.1) !important; /* Subtle glow */
+        word-break: break-word;
+    }
+
+    /* 6. Fix Links */
+    .md-typeset a {
+        color: #448aff !important; /* Keep links blue for standard recognition */
+        text-decoration: underline !important;
+    }
+
+    /* 7. Fix Admonition (Info box) Borders */
+    .md-typeset .admonition {
+        border-left: .2rem solid #ff9100 !important;
+    }
+}
+
+@media print {
+    /* 1. Force the tab containers to show all content stacked */
+    .tabbed-set {
+        display: block !important;
+    }
+
+    .tabbed-content {
+        display: block !important;
+    }
+
+    .tabbed-block {
+        display: block !important;
+        margin-bottom: 20px !important;
+        page-break-inside: avoid; /* Keeps a command and its output on the same page */
+    }
+
+    /* 2. Convert the Tab Labels into Section Headings */
+    /* This makes "Command" and "Expected Output" look like subtitles */
+    .tabbed-labels {
+        display: none !important; /* Hide the actual clickable tab bar */
+    }
+
+    /* Target the hidden labels and make them visible as text headers */
+    .tabbed-block::before {
+        content: attr(data-title); /* Pulls the "Command" or "Expected Output" text */
+        display: block;
+        font-weight: bold;
+        font-size: 1.1em;
+        color: #ff9100; /* Using that RCBC Orange for contrast */
+        margin-bottom: 8px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+}

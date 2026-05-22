@@ -1,0 +1,6 @@
+INHERIT: mkdocs.yml
+extra_css:
+  - stylesheets/pdf_fix.css
+plugins:
+  - to-pdf:
+      output_path: exports/manual.pdf

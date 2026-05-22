@@ -1,0 +1,58 @@
+/* For pdf generation */
+@media print {
+  details, .md-details {
+    display: block !important;
+  }
+  
+  .md-header, .md-footer, .md-sidebar {
+    display: none !important;
+  }
+}
+
+@media print {
+    /* 1. Force the entire tab set to be a simple vertical container */
+    .tabbed-set {
+        display: flex !important;
+        flex-direction: column !important;
+        position: static !important;
+        height: auto !important;
+    }
+
+    /* 2. Hide the radio buttons and the original tab labels */
+    .tabbed-set > input,
+    .tabbed-labels {
+        display: none !important;
+        visibility: hidden !important;
+        height: 0 !important;
+    }
+
+    /* 3. Force EVERY tab block to be visible and take up space */
+    .tabbed-content {
+        display: contents !important; /* Lets children stack naturally */
+    }
+
+    .tabbed-block {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative !important;
+        margin-bottom: 30px !important; /* Force a gap between sections */
+        page-break-inside: avoid;
+    }
+
+    /* 4. Generate the "Command" and "Expected Output" headers manually */
+    .tabbed-block::before {
+        content: "► " attr(data-title); /* Grabs the label from your Markdown */
+        display: block !important;
+        font-weight: bold !important;
+        font-size: 1.1em !important;
+        margin-bottom: 10px !important;
+        padding-bottom: 5px !important;
+        border-bottom: 1px solid currentColor !important;
+        text-transform: uppercase;
+    }
+
+    /* Theme-specific colors for the labels */
+    :root .tabbed-block::before { color: #333; }
+    [data-md-color-scheme="slate"] .tabbed-block::before { color: #ff9100; }
+}
