@@ -104,7 +104,7 @@ foreach ($Room in $Rooms) {
 # 5. ATTACH FILTER METADATA FOR TEAMS ROOM FINDER SIDE-PANEL
 # This maps the physical structural variables so users can filter by available hardware features.
 foreach ($Room in $Rooms) {
-    Set-Place -Identity $Room$ -Building "SSI Main Building" -Floor 7 -Features "Audio, Video, Display"
+    Set-Place -Identity $Room -Building "SSI Main Building" -Floor 7 -Features "Audio, Video, Display"
 }
 
 Write-Host "Configuration script successfully executed across all resource nodes!" -ForegroundColor Green
